@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "name": "Arcon",
+    "picture": "images/arcon.jpeg",
+    "price": 300,
+    "author": "Scottish Terrier"
+  },
+  {
+    "id": 2,
+    "name": "City",
+    "picture": "images/city.jpg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 3,
+    "name": "Forest",
+    "picture": "images/forest.jpeg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 4,
+    "name": "Green day",
+    "picture": "images/green_day.jpeg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 5,
+    "name": "Horizon",
+    "picture": "images/horizon.jpg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 6,
+    "name": "Latern",
+    "picture": "images/latern.jpeg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 7,
+    "name": "Leon",
+    "picture": "images/leon.jpeg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 8,
+    "name": "Maze",
+    "picture": "images/maze.jpeg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 9,
+    "name": "Ruins",
+    "picture": "images/ruins.jpeg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 10,
+    "name": "Star night",
+    "picture": "images/StaredNight.jpeg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 11,
+    "name": "Leon",
+    "picture": "images/leon.jpeg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 12,
+    "name": "Sunday",
+    "picture": "images/sunday.jpeg",
+    "price": 300,
+    "author": "Annonimous"
+  },
+  {
+    "id": 13,
+    "name": "Waterfall",
+    "picture": "images/waterfall.jpeg",
+    "price": 300,
+    "author": "Annonimous"
+  }
+]
