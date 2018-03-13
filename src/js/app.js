@@ -109,7 +109,7 @@ App = {
         console.log(account);
         return sellArtInstance.purchasesArt.sendTransaction(artId,{from: account, 
           value: '0x016345785d8a0000',
-          gas: '0x4388', 
+          gas: 90000, 
           gasPrice: '0x09502f9000'});
       }).then(function(result) {
         return App.markSold();
