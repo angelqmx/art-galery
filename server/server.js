@@ -25,7 +25,7 @@ app.listen(port, () => {
   } else {
     console.warn("No web3 detected. Falling back to http://127.0.0.1:7545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-    truffle_connect.web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545"));
+    truffle_connect.web3 = new Web3(new Web3.providers.HttpProvider("http://35.172.153.129:7545"));
   }
   console.log("Express Listening at http://localhost:" + port);
 

@@ -9,7 +9,7 @@ var art_gallery = angular.module('art_gallery', ['ngMaterial', 'ngAnimate', 'ngM
           app.web3Provider = web3.currentProvider;
         } else {
           // If no injected web3 instance is detected, fall back to Ganache
-          app.web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:7545');
+          app.web3Provider = new Web3.providers.HttpProvider('http://35.172.153.129:7545');
         }
         
         $urlRouterProvider.otherwise('/');
