@@ -1,0 +1,12 @@
+.text-center {
+  text-align: center; }
+
+.md-toast .error {
+  background-color: red; }
+
+.md-toast .success {
+  background-color: green; }
+
+.sold {
+  color: gray;
+  background-color: lightcoral; }

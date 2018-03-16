@@ -1,0 +1,10 @@
+<md-list ng-cloak>
+   <md-subheader class="md-no-sticky">Art works</md-subheader>
+   <md-list-item ng-repeat="art in arts | orderBy:'sold'"" ng-click="goToArt(art.id, $event)" class="noright" ng-class="{sold:art.sold}" >
+    <img alt="{{ art.name }}" ng-src="{{ art.imageUrl }}" class="md-avatar" />
+    <p>{{ art.name }}</p>
+    <md-icon md-svg-icon="action:credit_card"  ng-click="openConfirmPurchase(art, $event)" aria-label="Purchase" class="md-secondary md-hue-3" ng-show="!art.sold"></md-icon>
+    <md-icon class="md-secondary" ng-click="doEdit(art.id)" aria-label="Chat" md-svg-icon="content:create" ng-show="!art.sold"></md-icon>
+    <md-icon class="md-secondary" aria-label="Chat" md-svg-icon="action:report_problem" ng-show="art.sold"></md-icon>
+  </md-list-item>
+</md-list >

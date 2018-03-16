@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Art Gallery</title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="/public/css/app.css">
+    <!-- endinject -->
+</head>
+
+<body ng-app="art_gallery" ng-cloak>
+    <h1 class="md-display-1 text-center">Art Gallery</h1>
+  
+    <md-content class="md-padding" layout="row" layout-align="center">
+        <md-nav-bar md-selected-nav-item="" nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-sref="home" name="home">Home</md-nav-item>
+            <md-nav-item md-nav-sref="updateart" name="updateart">Add New</md-nav-item>
+        </md-nav-bar>
+    </md-content>
+    <div ui-view></div>
+    <!-- inject:js -->
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="/bower_components/angular-ui-router/angular-ui-router.min.js"></script>
+    <script src="/bower_components/angular-material/angular-material.min.js"></script>
+    <script src="/bower_components/bignumber.js/bignumber.js"></script>
+    <script src="/bower_components/web3/dist/web3-light.js"></script>
+    <script src="/public/js/config/app.js"></script>
+    <script src="/public/js/services/store-service.js"></script>
+    <script src="/public/js/controllers/about-controller.js"></script>
+    <script src="/public/js/controllers/home-controller.js"></script>
+    <script src="/public/js/controllers/updateart-controller.js"></script>
+    <script src="/public/js/controllers/shopModal-controller.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>

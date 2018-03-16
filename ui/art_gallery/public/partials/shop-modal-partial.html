@@ -1,0 +1,42 @@
+ 
+<md-dialog aria-label="Input form url builder" style="width: 60%;">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Confirm Transaction</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="/public/images/ic_close_white_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>   
+
+
+     <md-dialog-content>    
+            <md-content layout-padding>
+                <img style="margin: auto; max-width: 100%;" ng-src="{{ art.imageUrl }}">
+                <form name="frmConfirmTransaction" class="form-horizontal" novalidate="">
+                    <md-input-container class="md-block">
+                      <label>Art name</label>
+                      <input type="text" ng-model="art.name" readonly="">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <label>Price</label>
+                      <input type="text" ng-model="price" readonly="">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <md-checkbox ng-model="param.approved"  >Confirm transaction</md-checkbox>
+                    </md-input-container>                    
+            	</form>
+        </md-content>
+    </md-dialog-content>
+
+     <md-dialog-actions layout="row">
+        <md-button  ng-click="cancel()" class="md-warn " >
+            Close
+        </md-button>
+        <md-button ng-click="save()" ng-disabled="loading || !param.approved" class="md-primary md-raised" md-autofocus>
+            Accept
+        </md-button>   
+       
+    </md-dialog-actions>
+</md-dialog>
