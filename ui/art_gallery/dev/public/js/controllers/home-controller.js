@@ -1,10 +1,17 @@
 (function(app) {
-	app.controller('HomeController', ['$scope','storeService','$mdDialog', function($scope,storeService,$mdDialog) {
+	app.controller('HomeController', ['$rootScope','$scope','storeService','$mdDialog', 
+        function($rootScope,$scope,storeService,$mdDialog) {
 		$scope.arts=[];
-		storeService.query(function(result,error){
-			$scope.arts=result;
-			console.log($scope.arts);			
-		});
+		
+
+        $rootScope.$on("newToken",function(){
+            storeService.query(function(result,error){
+            $scope.arts=result;
+            console.log($scope.arts);           
+        });
+        })
+
+
 
 		$scope.openConfirmPurchase = function(art,evt) {
         evt.preventDefault();

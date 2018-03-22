@@ -15,6 +15,9 @@
     "async": "^2.6.0",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.0",
+    "randomstring": "^1.1.5",
+    "swagger-ui-express": "latest",
     "truffle-contract": "^3.0.4",
     "web3": "^0.20.6"
   },

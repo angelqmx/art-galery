@@ -38,6 +38,18 @@
 		  });
        };
 
+       storeService.login= function(param,callback){
+       	  $http({
+		  method: 'POST',
+		  url: root+'/api/login',
+		  data:param
+		  }).then(function(result){
+		  	callback(result.data,null);
+		  }, function(error){
+		  	callback(null,error);
+		  });
+       };
+
        return storeService;
 	}]);
 })(art_gallery);

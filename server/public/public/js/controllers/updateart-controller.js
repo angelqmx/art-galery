@@ -14,7 +14,7 @@
 			        position: 'top right'
 			    });
 			}else{
-				$scope.art={};
+				
 				
 				$mdToast.show({
 			        template: '<md-toast class="md-toast success" >New art work saved succesfull</md-toast>',
@@ -22,6 +22,7 @@
 			        position: 'top right'
 			    });
 			    $timeout(function() {
+			      $scope.art={};
 			      $scope.artForm.$setPristine();
 			      $scope.artForm.$setUntouched();
 			      $scope.artForm.$submitted = false;

@@ -1,0 +1,403 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.1.0",
+    "title": "Store for smart contracts",
+    "description": "Api for use and creation of contract for selling products in a Ethereum network"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/",
+  "tags": [
+    {
+      "name": "Store",
+      "description": "API for the use of the store."
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "description": "Log in to the system using the eth address of the client/Admin and his api_key",
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "body",
+            "required": true,
+            "description": "Address of the eth account of the client or admin ",
+            "schema": {
+              "$ref": "#/definitions/Account"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "JSON Web token for working with the api",
+            "schema": {
+              "$ref": "#/definitions/Token"
+            }
+          }
+        }
+      }
+    },
+    "/admin/stores":{
+      "post":{
+        "tags": [
+          "Administration of Stores"
+        ],
+        "description":"Create a new store for the client address, only use for administrator",
+        "parameters": [
+          {
+          "name": "client",
+          "in": "body",
+          "required": true,
+          "description": "Address of the eth account of the admin ",
+          "schema": {
+            "$ref": "#/definitions/Address"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Personal key for created store",
+            "schema": {
+              "$ref": "#/definitions/Key"
+            }                     
+          },
+          "400":{
+            "description": "Invalid address supplied"
+          },
+          "404":{
+            "description": "User not found"
+          } 
+        },
+        "security":[{"JWT":[]}]
+      }
+    },
+    "/stores":{
+      "get":{
+        "tags": [
+          "Related to product of store"
+        ],
+        "description":"Get list of all the products in the store of the user client",
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of products of the store",
+            "schema": {
+              "$ref": "#/definitions/Arts"
+            }                     
+          },
+          "400":{
+            "description": "Invalid address supplied"
+          },
+          "404":{
+            "description": "User not found"
+          } 
+        },
+        "security":[{"JWT":[]}]
+      },
+      "post":{
+        "tags": [
+          "Related to product of store"
+        ],
+        "description":"Create a new product for the store of the client",
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of products of the store",
+            "schema": {
+              "$ref": "#/definitions/ArtCreate"
+            }                     
+          },
+          "400":{
+            "description": "Invalid address supplied"
+          },
+          "404":{
+            "description": "User not found"
+          } 
+        },
+        "security":[{"JWT":[]}]
+      }
+    },
+    "/store/{id}":{
+        "get":{
+          "tags": [
+                    "Related to product of store"
+                  ],
+          "description":"Fetch one product by id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of product to fetch",
+              "required": true,
+              "type": "integer",
+              "format": "int64"
+            }
+          ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of products of the store",
+            "schema": {
+              "$ref": "#/definitions/Art"
+            }                     
+          },
+          "400":{
+            "description": "Invalid address supplied"
+          },
+          "404":{
+            "description": "User not found"
+          } 
+        },
+        "security":[{"JWT":[]}]
+      },
+      "put":{
+        "tags": [
+          "Related to product of store"
+        ],
+        "description":"Update a product for the store of the client",
+         "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of pet to update",
+              "required": true,
+              "type": "integer",
+              "format": "int64"
+            }
+          ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation result",
+            "schema": {
+              "$ref": "#/definitions/Success"
+            }                     
+          },
+          "400":{
+            "description": "Invalid address supplied"
+          },
+          "404":{
+            "description": "User not found"
+          } 
+        },
+        "security":[{"JWT":[]}]
+      }
+    },
+    "/stores/purchase/{id}":{
+      "put":{
+        "tags": [
+          "Related to product of store"
+        ],
+        "description":"Buy a product of the store of the client",
+         "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of pet to buy",
+              "required": true,
+              "type": "integer",
+              "format": "int64"
+            }
+          ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation result",
+            "schema": {
+              "$ref": "#/definitions/Success"
+            }                     
+          },
+          "400":{
+            "description": "Invalid address supplied"
+          },
+          "404":{
+            "description": "User not found"
+          } 
+        },
+        "security":[{"JWT":[]}]
+      }
+    },
+    "/owner":{
+      "get":{
+        "tags": [
+          "Related of the owner of the store "
+        ],
+        "description":"Get the owner of the Store",
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of products of the store",
+            "schema": {
+              "$ref": "#/definitions/Arts"
+            }                     
+          },
+          "400":{
+            "description": "Invalid address supplied"
+          },
+          "404":{
+            "description": "User not found"
+          } 
+        },
+        "security":[{"JWT":[]}]
+      }
+    }
+  },
+  "definitions": {
+    "Token": {
+      "properties": {
+        "auth": {
+          "type": "boolean"          
+        },
+        "token": {
+          "type": "string",
+          "uniqueItems": true
+        }
+      }
+    },
+    "Success": {
+      "properties": {
+        "success": {
+          "type": "boolean"          
+        }
+      }
+    },
+    "Account": {
+      "required": [
+        "address",
+        "key"
+      ],
+      "properties": {
+        "address": {
+          "type": "string"          
+        },
+        "key": {
+          "type": "string"
+        }
+      }
+    },
+    "Address": {
+      "required": [
+        "address"
+      ],
+      "properties": {
+        "address": {
+          "type": "string",
+          "uniqueItems": true
+        }
+      }
+    },
+    "Key": {
+      "properties": {
+        "success": {
+          "type": "boolean"          
+        },
+        "api_key": {
+          "type": "string",
+          "uniqueItems": true
+        }
+      }
+    },
+    "Art":{
+      "properties": {
+        "id": {
+          "type": "integer"          
+        },
+        "artist": {
+          "type": "string",
+          "title": "Address Eth of the owner of the product to pay"
+        },
+        "name":{
+          "type": "string",
+          "title": "Name of the product"
+        },
+        "author":{
+          "type": "string",
+          "title": "Author name of the product"
+        },
+        "price":{
+          "type": "integer",
+          "title": "Price of the product on wei"
+        },
+        "imageUrl":{
+          "type": "string",
+          "format": "uri"
+        },
+        "sold":{
+          "type":"boolean"
+        }
+      }
+    },
+    "Arts":{
+      "type":"array",
+      "items":{
+        "$ref": "#/definitions/Art"
+      }
+    },
+    "ArtCreate":{
+      "properties": {
+        "address": {
+          "type": "string",
+          "title": "Address Eth of the owner of the product to pay"
+        },
+        "name":{
+          "type": "string",
+          "title": "Name of the product"
+        },
+        "author":{
+          "type": "string",
+          "title": "Author name of the product"
+        },
+        "price":{
+          "type": "integer",
+          "title": "Price of the product on wei"
+        },
+        "image":{
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  },
+  "securityDefinitions":{
+    "JWT": {
+      "description": "JSON Web token",
+      "type": "apiKey",
+      "name": "x-access-token",
+      "in": "header"
+    }
+  }
+}

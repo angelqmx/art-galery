@@ -1,5 +1,5 @@
-var SellArt = artifacts.require("SellArt");
+var StoreCreator = artifacts.require("StoreCreator");
 
 module.exports = function(deployer) {
-  deployer.deploy(SellArt);
+  deployer.deploy(StoreCreator);
 };

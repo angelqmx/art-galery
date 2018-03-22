@@ -1,0 +1,29 @@
+<form name="projectForm" ng-submit="getToken()">
+
+    <div layout="row">
+            <md-input-container flex="50">
+              <label style="color: white;">Client Address</label>
+              <input style="color: white;" required name="address" ng-model="user.address">
+              <div ng-messages="projectForm.address.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+
+            <md-input-container flex="50">
+              <label style="color: white;">Client Key</label>
+              <input style="color: white;" required name="key" ng-model="user.key">
+              <div ng-messages="projectForm.key.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+           
+            <md-button type="submit"  class="md-accent md-raised" >Refresh token</md-button>
+    </div>
+     <div layout="row">
+          <md-input-container flex="100">
+              <label style="color: white;">Token</label>
+              <input style="color: white;" readonly="" name="key" ng-model="token">              
+            </md-input-container>
+     </div>    
+ 
+</form>
