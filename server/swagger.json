@@ -5,7 +5,7 @@
     "title": "Store for smart contracts",
     "description": "Api for use and creation of contract for selling products in a Ethereum network"
   },
-  "host": "localhost:3000",
+  "host": "35.172.153.129:3000",
   "basePath": "/api/",
   "tags": [
     {
