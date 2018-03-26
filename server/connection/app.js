@@ -69,12 +69,12 @@ module.exports = {
     Store.at(contractAddress).then(function(instance) {
       meta = instance;
     
-      console.log(self.web3.toWei(price, "ether"));
+     // console.log(self.web3.toWei(price, "ether"));
       return meta.addArt(address,name,author,image,self.web3.toWei(price, "ether"),{from:ownerAddress,gas:900000});
     }).then(function(value) {
         callback();
     }).catch(function(e) {
-        console.log(e);
+       // console.log(e);
         callback("Error 404");
     });
   },
@@ -84,7 +84,7 @@ module.exports = {
     // Bootstrap the Store abstraction for Use.
     Store.setProvider(self.web3.currentProvider);
    
-    console.log(config.ADMIN_ADDRESS);
+    //console.log(config.ADMIN_ADDRESS);
     var meta;
     Store.at(contractAddress).then(function(instance) {
       meta = instance;
@@ -92,7 +92,7 @@ module.exports = {
     }).then(function(value) {
         callback();
     }).catch(function(e) {
-        console.log(e);
+        //console.log(e);
         callback("Error 404");
     });
   },
@@ -109,7 +109,7 @@ module.exports = {
     }).then(function(value) {
         callback(value);
     }).catch(function(e) {
-        console.log(e);
+       // console.log(e);
         callback("Error 404");
     });
   },
@@ -126,7 +126,7 @@ module.exports = {
     }).then(function(value) {
         callback(value);
     }).catch(function(e) {
-        console.log(e);
+       // console.log(e);
         callback("Error 404");
     });
   },
@@ -135,18 +135,20 @@ module.exports = {
 
     // Bootstrap the Store abstraction for Use.
     Store.setProvider(self.web3.currentProvider);
-
+    console.log(id);
+    console.log(price);
+    console.log(ownerAddress);
     var meta;
     Store.at(contractAddress).then(function(instance) {
       meta = instance;
       return meta.purchasesArt(id,{from: ownerAddress, 
           value: price,
-          gas: 90000
+          gas: 2008000
         });;
     }).then(function() {
         callback();      
     }).catch(function(e) {
-      console.log(e);
+      console.log("ERROR 404");
       callback("ERROR 404");
     });
   }

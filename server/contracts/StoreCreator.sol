@@ -12,7 +12,7 @@ contract  StoreCreator is Owned {
   mapping (address =>  StoresContract)  public contracts;
 
 
-  function createContract (address _owner, string key) public {
+  function createContract (address _owner, string key)  public onlyOwner {
       Store s = new Store();
       s.transferOwnership(_owner);
       StoresContract memory c =  StoresContract (key,s); 

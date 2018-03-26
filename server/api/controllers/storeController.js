@@ -37,7 +37,7 @@ exports.list_all = function(req, res) {
     var count = answer.toNumber();
     var index = [];
     var arts=[];
-    console.log(count);
+   
     for(var i = 1; i <= count;i++){
         index.push(i);
     }
@@ -68,7 +68,6 @@ exports.owner = function(req,res){
 
 
 exports.createArt = function(req, res) {
-  console.log(req);
 	truffle_connect.addArt(req.client_address,req.contract_address,
     req.body.address,req.body.name,req.body.author,
 		req.body.image,req.body.price,function(){
@@ -78,6 +77,7 @@ exports.createArt = function(req, res) {
 
 
 exports.read_a_product = function(req, res) {
+    console.log(req.params.productId)
     truffle_connect.getArt(req.client_address,req.contract_address,req.params.productId,function(art){
         res.status(200).json({id:art[0].toNumber(),
                 artist:art[1],
